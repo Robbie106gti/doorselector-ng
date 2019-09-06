@@ -14,6 +14,7 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './store/effects/app.effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { MatComponent } from './components/cards/mat/mat.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
     NcSidebarComponent,
     FooterComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    MatComponent
   ],
   imports: [
     BrowserModule,
