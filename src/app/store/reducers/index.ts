@@ -7,7 +7,7 @@ import {
 } from '@ngrx/store';
 import { environment } from '../../../environments/environment';
 import * as fromRouter from '@ngrx/router-store';
-import { Router, RouterStateSnapshot } from '@angular/router';
+import { RouterStateSnapshot } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { RouterStateSerializer } from '@ngrx/router-store';
 import { RouterState } from 'src/app/models/router';
@@ -29,7 +29,7 @@ export const reducers: ActionReducerMap<State> = {
 
 export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];
 
-export const getRouterFeature = createFeatureSelector<Router>('routerState');
+export const getRouterFeature = createFeatureSelector<RouterState>('routerState');
 export const getUiFeature = createFeatureSelector<fromUi.UiState>('uiState');
 
 @Injectable()

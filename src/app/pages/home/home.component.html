@@ -1,1 +1,13 @@
-<p>home works!</p>
+<div class="app-body" [ngClass]="[(uiState.themeColor.dark === true ? 'dark': 'light')]" >
+<div [ngClass]="[(uiState.mobile === true ? 'mobile' : 'notmobile')]">
+<div [ngClass]="[(uiState.sidemenu === true ? 'sidemenu' : 'sidebar')]">
+  <nc-sidebar [uiState]="uiState"></nc-sidebar>
+  <nc-header *ngIf="uiState.mobile === true"></nc-header>
+  <router-outlet></router-outlet>
+  is mobile: {{ uiState.mobile }}<br>
+  is sidemenu open: {{ uiState.sidemenu }}<br>
+  is darkmode enanbled: {{ uiState.themeColor.dark }}<br>
+  <nc-footer [dark]="uiState.themeColor.dark"></nc-footer>
+</div>
+</div>
+</div>

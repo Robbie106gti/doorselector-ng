@@ -1,0 +1,38 @@
+.light {
+    background-color: #EEEEEE
+   }
+   .dark {
+       background-color: #333333
+   }
+   .app-body > .mobile {
+       position: absolute;
+       top: 4vh;
+       min-height: 96vh;
+       background-color: inherit;
+       .sidebar {
+           position: relative;
+           left:0;
+           width: 100vw;
+       }
+       .sidemenu {
+           position: relative;
+           left: 35vw;
+           width: 65vw;
+       }
+   }
+   .app-body > .notmobile {
+       position: relative;
+       top: 0vh;
+       min-height: 100vh;
+       background-color: inherit;
+       .sidebar {
+           position: relative;
+           left: 4vw;
+           width: 96vw;
+       }
+       .sidemenu {
+           position: relative;
+           left: 35vw;
+           width: 65vw;
+       }
+   }

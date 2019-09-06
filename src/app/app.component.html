@@ -1,7 +1,1 @@
-<div class="app-body" >
-    {{ (isMobile$ | async) }}
-  <nc-sidebar [mobile]="(isMobile$ | async)" [dark]="(dark$ | async)" [open]="(open$ | async)"></nc-sidebar>
-  <nc-header *ngIf="(isMobile$ | async) === true"></nc-header>
-  <router-outlet></router-outlet>
-  <nc-footer [dark]="(dark$ | async)"></nc-footer>
-</div>
+<nc-home [uiState]="(uiState$ | async)"></nc-home>

@@ -8,3 +8,8 @@ export const getUiState = createSelector(
   (state: UiState) => state
 );
 
+export const getThemeColor = createSelector(
+  fromFeature.getUiFeature,
+  (state: UiState) => state.themeColor
+);
+

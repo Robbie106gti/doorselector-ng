@@ -13,21 +13,35 @@ nav {
 }
 .open {
     width: 35vw;
+    .end {
+        text-align: right;
+        width: auto;
+        right: 1vw;
+    }
+
+    svg {
+        color: white;
+        margin-left: 0.5vw;
+        margin-top: 0.5vw;
+        max-width: 10vw;
+    }
 }
 .closed {
     width: 4vw;
-}
+    .end {
+        text-align: center;
+        width: 100%;
+    }
 
-svg {
-    max-width: 3vw;
-    color: white;
-    margin-left: 0.5vw;
-    margin-top: 0.5vw;
+    svg {
+        max-width: 3vw;
+        color: white;
+        margin-left: 0.5vw;
+        margin-top: 0.5vw;
+    }
 }
 
 .end {
     position: absolute;
     bottom: 0;
-    text-align: center;
-    width: 100%;
 }
