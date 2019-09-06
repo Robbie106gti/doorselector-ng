@@ -1,0 +1,33 @@
+aside {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+}
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 4vh;
+    width: 100vw;
+}
+.open {
+    width: 35vw;
+}
+.closed {
+    width: 4vw;
+}
+
+svg {
+    max-width: 3vw;
+    color: white;
+    margin-left: 0.5vw;
+    margin-top: 0.5vw;
+}
+
+.end {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+}
