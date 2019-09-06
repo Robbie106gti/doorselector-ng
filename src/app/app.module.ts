@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NcSidebarComponent } from './ui/nc-sidebar/nc-sidebar.component';
 import { FooterComponent } from './ui/footer/footer.component';
@@ -15,6 +14,10 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './store/effects/app.effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { MatComponent } from './components/cards/mat/mat.component';
+import { MaterialComponent } from './pages/material/material.component';
+import { DoorstyleComponent } from './pages/doorstyle/doorstyle.component';
+import { DoorsComponent } from './pages/doors/doors.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { MatComponent } from './components/cards/mat/mat.component';
     FooterComponent,
     HeaderComponent,
     HomeComponent,
-    MatComponent
+    MatComponent,
+    MaterialComponent,
+    DoorstyleComponent,
+    DoorsComponent
   ],
   imports: [
     BrowserModule,
