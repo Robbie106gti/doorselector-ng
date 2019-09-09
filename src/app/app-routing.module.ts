@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DoorstyleComponent } from './pages/doorstyle/doorstyle.component';
 import { DoorsComponent } from './pages/doors/doors.component';
 import { MaterialComponent } from './pages/material/material.component';
+import * as fromGuards from './guards';
 
 export const routes: Routes = [
   {
@@ -14,8 +15,9 @@ export const routes: Routes = [
     component: DoorsComponent
   },
   {
-    path: 'home',
-    component: MaterialComponent
+    path: '',
+    component: MaterialComponent,
+    canActivate: [fromGuards.MatGuard]
   }
 ];
 

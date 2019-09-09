@@ -1,20 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
-body, html {
-    font-family: 'Quicksand', sans-serif;
-    margin: 0;
-    padding: 0;
+body,
+html {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 .dark {
-    fill:#EBEBEB;
-    background-color: #1A1818;
-    color: #EBEBEB;
+  fill: #ebebeb;
+  background-color: #1a1818;
+  color: #ebebeb;
+  a {
+    color: rgb(255, 250, 219);
+  }
+  a:hover {
+    color: rgb(248, 200, 137);
+  }
+  a:visited {
+    color: rgb(188, 253, 255);
+  }
 }
 .light {
-    fill:#1A1818;
-    background-color: #FFFFFF;
-    color: #1A1818;
+  fill: #1a1818;
+  background-color: #ffffff;
+  color: #1a1818;
 }
 .pointer {
-    cursor: pointer;
+  cursor: pointer;
 }

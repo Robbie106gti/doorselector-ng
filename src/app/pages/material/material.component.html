@@ -1,1 +1,2 @@
-<p>material works!</p>
+<p>Select a type of material/finish</p>
+<nc-mat *ngFor="let card of cards$ | async" [card]="card"></nc-mat>
