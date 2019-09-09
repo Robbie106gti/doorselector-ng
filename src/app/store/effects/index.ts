@@ -2,7 +2,7 @@ import { RouterEffects } from './router.effects';
 import { UiEffects } from './ui.effects';
 import { ApiEffects } from './api.effects';
 
-export const Effects: any[] = [
+export const effects: any[] = [
   RouterEffects,
   UiEffects,
   ApiEffects

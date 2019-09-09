@@ -6,7 +6,7 @@ export const MAT_FAIL = '[API] Load Material and finishes main Fail';
 
 export class LoadMat implements Action {
   readonly type = MAT_LOAD;
-  constructor(public payload: any) { }
+  constructor(public payload: any) { console.log('hello from action mat') }
 }
 export class LoadMatSuccess implements Action {
   readonly type = MAT_SUCCESS;
