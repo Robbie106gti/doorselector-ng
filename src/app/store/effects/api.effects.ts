@@ -21,7 +21,7 @@ export class ApiEffects {
   load_mat$ = this.actions$.pipe(
     ofType(apiActions.MAT_LOAD),
     switchMap(async (action: { type: string; payload: any }) => {
-      const results = await searchWebquoin(action.payload);
+      const results = await mySqlQuery('ds/mat&fin');
       return new apiActions.LoadMatSuccess(results);
     }),
     catchError(error => of(new apiActions.LoadMatFail(error)))
@@ -29,8 +29,8 @@ export class ApiEffects {
 
 }
 
-async function searchWebquoin(query) {
-  const results = await fetch('https://webquoin.com/catalog/api/public/index.php/search/' + query);
+async function mySqlQuery(query) {
+  const results = await fetch('https://webquoin.com/catalog/api/public/index.php/' + query);
   const data = await results.json();
   console.log(data);
   return data;

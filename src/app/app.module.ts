@@ -18,6 +18,7 @@ import { MaterialComponent } from './pages/material/material.component';
 import { DoorstyleComponent } from './pages/doorstyle/doorstyle.component';
 import { DoorsComponent } from './pages/doors/doors.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { AppRoutingModule } from './app-routing.module';
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([AppEffects]),
-    StoreRouterConnectingModule.forRoot()
+    StoreRouterConnectingModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

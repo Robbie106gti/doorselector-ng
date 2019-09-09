@@ -55,17 +55,20 @@ export function reducer(
         }
       };
     }
-    /*
-    case fromApi.MAT_FAIL: {
+
+    case fromApi.MAT_LOAD: {
+      const load = {
+        loaded: false,
+        loading: true
+      };
       return {
         ...state,
         matNfin: {
           ...state.matNfin,
-          loaded: false,
-          loading: false
+          load
         }
       };
-    } */
+    }
 
     default:
       return state;

@@ -12,18 +12,29 @@ html {
   color: #ebebeb;
   a {
     color: rgb(255, 250, 219);
+    text-transform: capitalize;
   }
   a:hover {
     color: rgb(248, 200, 137);
   }
   a:visited {
-    color: rgb(188, 253, 255);
+    color: rgb(210, 253, 255);
   }
 }
 .light {
   fill: #1a1818;
   background-color: #ffffff;
   color: #1a1818;
+  a {
+    color: rgb(105, 102, 72);
+    text-transform: capitalize;
+  }
+  a:hover {
+    color: rgb(80, 61, 34);
+  }
+  a:visited {
+    color: rgb(48, 84, 87);
+  }
 }
 .pointer {
   cursor: pointer;
