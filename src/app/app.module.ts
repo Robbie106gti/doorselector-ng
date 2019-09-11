@@ -7,14 +7,15 @@ import { FooterComponent } from './ui/footer/footer.component';
 import { HeaderComponent } from './ui/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers, effects } from './store';
+import { reducers, metaReducers, effects, CustomSerializer } from './store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { StoreRouterConnectingModule, RouterStateSerializer } from '@ngrx/router-store';
 import { MatComponent } from './components/cards/mat/mat.component';
 import { MaterialComponent } from './pages/material/material.component';
 import { DoorstyleComponent } from './pages/doorstyle/doorstyle.component';
+import { DoorComponent } from './components/cards/door/door.component';
 import { DoorsComponent } from './pages/doors/doors.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -29,7 +30,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     MatComponent,
     MaterialComponent,
     DoorstyleComponent,
-    DoorsComponent
+    DoorsComponent,
+    DoorComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     StoreRouterConnectingModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [{ provide: RouterStateSerializer, useClass: CustomSerializer }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -39,6 +39,17 @@ export class ApiEffects {
     catchError(error => of(new apiActions.LoadDSFail(error)))
   );
 
+  @Effect()
+  load_doors$ = this.actions$.pipe(
+    ofType(apiActions.DOORS_LOAD),
+    switchMap(async (action: { type: string; payload: any }) => {
+      const results = await fetch('https://webquoin.com/catalog/api/public/index.php/ds/doors');
+      const data = await results.json();
+      return new apiActions.LoadDoorsSuccess(data);
+    }),
+    catchError(error => of(new apiActions.LoadDoorsFail(error)))
+  );
+
 }
 
 /* async function mySqlQuery(query) {

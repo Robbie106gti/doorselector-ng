@@ -1,5 +1,6 @@
 import * as fromApi from '../actions/api.actions';
 import { Load, Mat } from '../../models/api';
+import { Door } from 'src/app/models/doors';
 
 export interface ApiState {
   matNfin: {
@@ -12,7 +13,7 @@ export interface ApiState {
   };
   doors: {
     load: Load;
-    doors?: [Mat];
+    doors?: any[];
   };
 }
 
@@ -96,6 +97,40 @@ export function reducer(
         ...state,
         doorstyles: {
           ...state.doorstyles,
+          load
+        }
+      };
+    }
+    case fromApi.DOORS_SUCCESS: {
+      const payload = action.payload.filter((door: Door) => {
+        if (!door.ImageURLpreview) {
+          return false;
+        }
+        return true;
+      });
+      const load = {
+        loaded: true,
+        loading: false
+      };
+      return {
+        ...state,
+        doors: {
+          ...state.doors,
+          load,
+          doors: payload
+        }
+      };
+    }
+
+    case fromApi.DOORS_LOAD: {
+      const load = {
+        loaded: false,
+        loading: true
+      };
+      return {
+        ...state,
+        doors: {
+          ...state.doors,
           load
         }
       };

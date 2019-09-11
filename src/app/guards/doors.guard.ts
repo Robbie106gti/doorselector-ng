@@ -10,13 +10,13 @@ import { Load } from '../models/api';
 @Injectable({
   providedIn: 'root'
 })
-export class DoorstyleGuard implements CanActivate {
+export class DoorsGuard implements CanActivate {
   constructor(private store: Store<fromStore.State>) { }
   canActivate(): Observable<boolean> {
     return this.checkStore().pipe(
       map((load: Load) => {
         if (load.loading === false && load.loaded === false) {
-          this.store.dispatch({ type: fromStore.DS_LOAD });
+          this.store.dispatch({ type: fromStore.DOORS_LOAD });
         }
         return load.loaded;
       }),
@@ -27,6 +27,6 @@ export class DoorstyleGuard implements CanActivate {
   }
 
   checkStore(): Observable<Load> {
-    return this.store.select(fromStore.loadDoorstyle);
+    return this.store.select(fromStore.loadDoors);
   }
 }

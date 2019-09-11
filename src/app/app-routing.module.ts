@@ -9,16 +9,17 @@ export const routes: Routes = [
   {
     path: ':mat',
     component: DoorstyleComponent,
-    canActivate: [fromGuards.MatGuard, fromGuards.DoorstyleGuard]
+    canActivate: [fromGuards.MatGuard, fromGuards.DoorstyleGuard, fromGuards.DoorsGuard]
   },
   {
     path: ':mat/:doorstyle',
-    component: DoorsComponent
+    component: DoorsComponent,
+    canActivate: [fromGuards.MatGuard, fromGuards.DoorstyleGuard, fromGuards.DoorsGuard]
   },
   {
     path: '',
     component: MaterialComponent,
-    canActivate: [fromGuards.MatGuard]
+    canActivate: [fromGuards.MatGuard, fromGuards.DoorstyleGuard, fromGuards.DoorsGuard]
   }
 ];
 

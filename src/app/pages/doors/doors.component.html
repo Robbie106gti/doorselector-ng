@@ -1,1 +1,10 @@
-<p>doors works!</p>
+<div class="door-grid">
+  <p class="hint">Select a door</p>
+  <div class="cards">
+    <nc-door
+      class="card"
+      *ngFor="let card of cards$ | async"
+      [card]="card"
+    ></nc-door>
+  </div>
+</div>

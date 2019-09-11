@@ -94,6 +94,15 @@ html {
     'cards';
 }
 
+.door-grid {
+  top: 10vh;
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    'hint'
+    'cards';
+}
+
 .hint {
   grid-area: hint;
   justify-self: center;

@@ -34,4 +34,29 @@ export class LoadDSFail implements Action {
   constructor(public payload: any) { }
 }
 
-export type ActionsApi = LoadMat | LoadMatSuccess | LoadMatSuccess | LoadDS | LoadDSSuccess | LoadDSFail;
+export const DOORS_LOAD = '[API] Load Doors main';
+export const DOORS_SUCCESS = '[API] Loaded Doors main Success';
+export const DOORS_FAIL = '[API] Load Doors main Fail';
+
+export class LoadDoors implements Action {
+  readonly type = DOORS_LOAD;
+  constructor(public payload: any) { }
+}
+export class LoadDoorsSuccess implements Action {
+  readonly type = DOORS_SUCCESS;
+  constructor(public payload: any) { }
+}
+export class LoadDoorsFail implements Action {
+  readonly type = DOORS_FAIL;
+  constructor(public payload: any) { }
+}
+
+export type ActionsApi = LoadMat
+  | LoadMatSuccess
+  | LoadMatSuccess
+  | LoadDS
+  | LoadDSSuccess
+  | LoadDSFail
+  | LoadDoors
+  | LoadDoorsSuccess
+  | LoadDoorsFail;
