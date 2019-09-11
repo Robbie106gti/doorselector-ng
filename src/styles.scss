@@ -20,6 +20,10 @@ html {
   a:visited {
     color: rgb(210, 253, 255);
   }
+  .card {
+    background-color: #ebebeb;
+    color: #1a1818;
+  }
 }
 .light {
   fill: #1a1818;
@@ -35,7 +39,62 @@ html {
   a:visited {
     color: rgb(48, 84, 87);
   }
+  .card {
+    background-color: #ffffff;
+    color: #1a1818;
+  }
 }
 .pointer {
   cursor: pointer;
+}
+
+.notmobile {
+  .cards {
+    max-width: 50vw;
+  }
+}
+.mobile {
+  .cards {
+    max-width: 80vw;
+  }
+}
+
+.mat-grid {
+  top: 15vh;
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    'hint'
+    'cards';
+}
+
+.hint {
+  grid-area: hint;
+  justify-self: center;
+}
+.cards {
+  grid-area: cards;
+  display: grid;
+  justify-self: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.5rem;
+  .card {
+    overflow: hidden;
+    border-radius: 0.3rem;
+    width: 100%;
+    .card-image {
+      width: 100%;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .card-content {
+      font-size: larger;
+      .title {
+        display: grid;
+        justify-items: center;
+      }
+    }
+  }
 }
