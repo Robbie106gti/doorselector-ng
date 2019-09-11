@@ -1,1 +1,10 @@
-<p>doorstyle works!</p>
+<div class="mat-grid">
+  <p class="hint">Select a type of doorstyle</p>
+  <div class="cards">
+    <nc-mat
+      class="card"
+      *ngFor="let card of cards$ | async"
+      [card]="card"
+    ></nc-mat>
+  </div>
+</div>

@@ -23,3 +23,18 @@ export const itemsMatAndFin = createSelector(
   stateMatAndFin,
   (matNfin: { load: Load, mats: [Mat] }) => matNfin.load.loaded ? matNfin.mats : []
 );
+
+export const stateDoorstyle = createSelector(
+  getApiState,
+  (apiState: ApiState) => apiState.doorstyles
+);
+
+export const loadDoorstyle = createSelector(
+  stateDoorstyle,
+  (doorstyle: { load: Load }) => doorstyle.load
+);
+
+export const itemsDoorstyles = createSelector(
+  stateDoorstyle,
+  (doorstyle: { load: Load, doorstyles: [Mat] }) => doorstyle.load.loaded ? doorstyle.doorstyles : []
+);

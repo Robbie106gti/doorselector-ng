@@ -10,7 +10,7 @@ import { MatCard } from 'src/app/models/cards';
   styleUrls: ['./material.component.scss']
 })
 export class MaterialComponent implements OnInit {
-  cards$: Observable<any[]>;
+  cards$: Observable<any[] | [MatCard]>;
 
   constructor(private store: Store<fromStore.State>) { }
 

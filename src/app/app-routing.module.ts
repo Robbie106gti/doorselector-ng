@@ -7,11 +7,12 @@ import * as fromGuards from './guards';
 
 export const routes: Routes = [
   {
-    path: 'doorstyle',
-    component: DoorstyleComponent
+    path: ':mat',
+    component: DoorstyleComponent,
+    canActivate: [fromGuards.MatGuard, fromGuards.DoorstyleGuard]
   },
   {
-    path: 'doors',
+    path: ':mat/:doorstyle',
     component: DoorsComponent
   },
   {

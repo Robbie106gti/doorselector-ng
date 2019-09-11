@@ -8,9 +8,11 @@ export interface ApiState {
   };
   doorstyles: {
     load: Load;
+    doorstyles?: [Mat];
   };
   doors: {
     load: Load;
+    doors?: [Mat];
   };
 }
 
@@ -65,6 +67,35 @@ export function reducer(
         ...state,
         matNfin: {
           ...state.matNfin,
+          load
+        }
+      };
+    }
+    case fromApi.DS_SUCCESS: {
+      const payload = action.payload;
+      const load = {
+        loaded: true,
+        loading: false
+      };
+      return {
+        ...state,
+        doorstyles: {
+          ...state.doorstyles,
+          load,
+          doorstyles: payload
+        }
+      };
+    }
+
+    case fromApi.DS_LOAD: {
+      const load = {
+        loaded: false,
+        loading: true
+      };
+      return {
+        ...state,
+        doorstyles: {
+          ...state.doorstyles,
           load
         }
       };

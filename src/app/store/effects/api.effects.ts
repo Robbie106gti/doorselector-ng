@@ -21,11 +21,22 @@ export class ApiEffects {
   load_mat$ = this.actions$.pipe(
     ofType(apiActions.MAT_LOAD),
     switchMap(async (action: { type: string; payload: any }) => {
-      const results = await fetch('https://webquoin.com/catalog/api/public/index.php/ds/mat&fin');
+      const results = await fetch('https://webquoin.com/catalog/api/public/index.php/ds/mat');
       const data = await results.json();
       return new apiActions.LoadMatSuccess(data);
     }),
     catchError(error => of(new apiActions.LoadMatFail(error)))
+  );
+
+  @Effect()
+  load_ds$ = this.actions$.pipe(
+    ofType(apiActions.DS_LOAD),
+    switchMap(async (action: { type: string; payload: any }) => {
+      const results = await fetch('https://webquoin.com/catalog/api/public/index.php/ds/doorstyle');
+      const data = await results.json();
+      return new apiActions.LoadDSSuccess(data);
+    }),
+    catchError(error => of(new apiActions.LoadDSFail(error)))
   );
 
 }

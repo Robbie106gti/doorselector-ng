@@ -1,4 +1,5 @@
 export interface MatCard {
-    title: string;
-    image: string;
+  title: string;
+  image: string;
+  link: string;
 }

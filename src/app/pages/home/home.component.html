@@ -7,12 +7,14 @@
       <nc-sidebar [uiState]="uiState"></nc-sidebar>
       <nc-header *ngIf="uiState.mobile === true"></nc-header>
       <router-outlet></router-outlet>
-      <a routerLink="doorstyle"><h4>doorstyle</h4></a>
-      <a routerLink="doors"><h4>doors</h4></a>
-      <a routerLink="/"><h4>home</h4></a>
-      is mobile: {{ uiState.mobile }}<br />
-      is sidemenu open: {{ uiState.sidemenu }}<br />
-      is darkmode enanbled: {{ uiState.themeColor.dark }}<br />
+      <div hidden>
+        <a routerLink="doorstyle"><h4>doorstyle</h4></a>
+        <a routerLink="doors"><h4>doors</h4></a>
+        <a routerLink="/"><h4>home</h4></a>
+        is mobile: {{ uiState.mobile }}<br />
+        is sidemenu open: {{ uiState.sidemenu }}<br />
+        is darkmode enanbled: {{ uiState.themeColor.dark }}<br />
+      </div>
       <nc-footer [dark]="uiState.themeColor.dark"></nc-footer>
     </div>
   </div>
