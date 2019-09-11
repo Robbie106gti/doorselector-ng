@@ -16,7 +16,6 @@ export class MatGuard implements CanActivate {
     return this.checkStore().pipe(
       map((load: Load) => {
         if (load.loading === false && load.loaded === false) {
-          console.log(load)
           this.store.dispatch({ type: fromStore.MAT_LOAD, payload: '' });
         }
         return load.loaded;
