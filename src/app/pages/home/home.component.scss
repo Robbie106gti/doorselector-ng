@@ -4,33 +4,3 @@
 .dark {
   background-color: #333333;
 }
-.app-body > .mobile {
-  position: absolute;
-  top: 4vh;
-  min-height: 96vh;
-  background-color: inherit;
-  .sidebar {
-    position: relative;
-    left: 0;
-    width: 100vw;
-  }
-  .sidemenu {
-    position: relative;
-    left: 36vw;
-    width: 62vw;
-  }
-}
-.app-body > .notmobile {
-  top: 0vh;
-  min-height: 100vh;
-  .sidebar {
-    position: absolute;
-    left: 5vw;
-    width: 93vw;
-  }
-  .sidemenu {
-    position: absolute;
-    left: 36vw;
-    width: 62vw;
-  }
-}

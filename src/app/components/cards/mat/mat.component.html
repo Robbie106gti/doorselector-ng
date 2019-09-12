@@ -1,6 +1,6 @@
 <a [routerLink]="[card.link]" routerLinkActive="router-link-active">
   <div class="card-image">
-    <img [src]="card.image" [alt]="card.title" />
+    <img [src]="card.image" [alt]="card.title" loading="lazy" />
   </div>
   <div class="card-content">
     <p class="title">{{ card.title }}</p>

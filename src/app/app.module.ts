@@ -39,9 +39,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
-        strictStateImmutability: false,
-        strictActionImmutability: false,
-        strictStateSerializability: false,
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+        strictStateSerializability: true,
         strictActionSerializability: false,
       }
     }),

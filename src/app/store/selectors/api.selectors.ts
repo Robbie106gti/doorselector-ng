@@ -56,7 +56,7 @@ export const itemsDoors = createSelector(
   (doors: { load: Load, doors: any[] }, router: any) => {
     let doors_array = doors.load.loaded ? doors.doors : [];
     const params = router.state.params;
-    console.log(params);
+    // console.log(params);
     doors_array = doors_array.filter((door: Door) => {
       if (!door.doorstyle_menu.toLocaleLowerCase().includes(params.doorstyle)) { return false; }
       return materials(params.mat, door);
