@@ -66,6 +66,36 @@ export const itemsDoors = createSelector(
   }
 );
 
+export const stateColors = createSelector(
+  getApiState,
+  (apiState: ApiState) => apiState.colors
+);
+
+export const loadColors = createSelector(
+  stateColors,
+  (colors: { load: Load }) => colors.load
+);
+
+export const itemsColors = createSelector(
+  stateColors,
+  (colors: { load: Load, colors: any[] }) => colors.load.loaded ? colors.colors : []
+);
+
+export const stateStains = createSelector(
+  getApiState,
+  (apiState: ApiState) => apiState.stains
+);
+
+export const loadStains = createSelector(
+  stateStains,
+  (stains: { load: Load }) => stains.load
+);
+
+export const itemsStains = createSelector(
+  stateStains,
+  (stains: { load: Load, stains: any[] }) => stains.load.loaded ? stains.stains : []
+);
+
 function materials(mat, door) {
   let material = '';
   switch (mat) {

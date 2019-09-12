@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import * as fromGuards from './guards';
+
 import { DoorstyleComponent } from './pages/doorstyle/doorstyle.component';
 import { DoorsComponent } from './pages/doors/doors.component';
 import { MaterialComponent } from './pages/material/material.component';
-import * as fromGuards from './guards';
+import { ColorComponent } from './pages/color/color.component';
 
 export const routes: Routes = [
   {
@@ -14,6 +16,11 @@ export const routes: Routes = [
   {
     path: ':mat/:doorstyle',
     component: DoorsComponent,
+    canActivate: [fromGuards.MatGuard, fromGuards.DoorstyleGuard, fromGuards.DoorsGuard]
+  },
+  {
+    path: ':mat/:doorstyle/:door',
+    component: ColorComponent,
     canActivate: [fromGuards.MatGuard, fromGuards.DoorstyleGuard, fromGuards.DoorsGuard]
   },
   {

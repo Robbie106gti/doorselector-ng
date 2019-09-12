@@ -50,6 +50,28 @@ export class ApiEffects {
     catchError(error => of(new apiActions.LoadDoorsFail(error)))
   );
 
+  @Effect()
+  load_colors$ = this.actions$.pipe(
+    ofType(apiActions.COLORS_LOAD),
+    switchMap(async (action: { type: string; payload: any }) => {
+      const results = await fetch('https://webquoin.com/catalog/api/public/index.php/ds/colors');
+      const data = await results.json();
+      return new apiActions.LoadColorsSuccess(data);
+    }),
+    catchError(error => of(new apiActions.LoadColorsFail(error)))
+  );
+
+  @Effect()
+  load_stains$ = this.actions$.pipe(
+    ofType(apiActions.STAINS_LOAD),
+    switchMap(async (action: { type: string; payload: any }) => {
+      const results = await fetch('https://webquoin.com/catalog/api/public/index.php/ds/stains');
+      const data = await results.json();
+      return new apiActions.LoadStainsSuccess(data);
+    }),
+    catchError(error => of(new apiActions.LoadStainsFail(error)))
+  );
+
 }
 
 /* async function mySqlQuery(query) {

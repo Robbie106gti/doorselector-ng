@@ -19,6 +19,7 @@ import { DoorComponent } from './components/cards/door/door.component';
 import { DoorsComponent } from './pages/doors/doors.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { ColorComponent } from './pages/color/color.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     MaterialComponent,
     DoorstyleComponent,
     DoorsComponent,
-    DoorComponent
+    DoorComponent,
+    ColorComponent
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,14 @@ export interface ApiState {
     load: Load;
     doors?: any[];
   };
+  colors: {
+    load: Load;
+    colors?: any[];
+  };
+  stains: {
+    load: Load;
+    stains?: any[];
+  };
 }
 
 export const initialApiState: ApiState = {
@@ -31,6 +39,18 @@ export const initialApiState: ApiState = {
     }
   },
   doors: {
+    load: {
+      loading: false,
+      loaded: false
+    }
+  },
+  colors: {
+    load: {
+      loading: false,
+      loaded: false
+    }
+  },
+  stains: {
     load: {
       loading: false,
       loaded: false
@@ -131,6 +151,66 @@ export function reducer(
         ...state,
         doors: {
           ...state.doors,
+          load
+        }
+      };
+    }
+
+    case fromApi.COLORS_SUCCESS: {
+      const payload = action.payload;
+      const load = {
+        loaded: true,
+        loading: false
+      };
+      return {
+        ...state,
+        colors: {
+          ...state.colors,
+          load,
+          colors: payload
+        }
+      };
+    }
+
+    case fromApi.COLORS_LOAD: {
+      const load = {
+        loaded: false,
+        loading: true
+      };
+      return {
+        ...state,
+        colors: {
+          ...state.colors,
+          load
+        }
+      };
+    }
+
+    case fromApi.STAINS_SUCCESS: {
+      const payload = action.payload;
+      const load = {
+        loaded: true,
+        loading: false
+      };
+      return {
+        ...state,
+        stains: {
+          ...state.stains,
+          load,
+          stains: payload
+        }
+      };
+    }
+
+    case fromApi.STAINS_LOAD: {
+      const load = {
+        loaded: false,
+        loading: true
+      };
+      return {
+        ...state,
+        stains: {
+          ...state.stains,
           load
         }
       };

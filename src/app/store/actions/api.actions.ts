@@ -51,6 +51,40 @@ export class LoadDoorsFail implements Action {
   constructor(public payload: any) { }
 }
 
+export const COLORS_LOAD = '[API] Load Colors main';
+export const COLORS_SUCCESS = '[API] Loaded Colors main Success';
+export const COLORS_FAIL = '[API] Load Colors main Fail';
+
+export class LoadColors implements Action {
+  readonly type = COLORS_LOAD;
+  constructor(public payload: any) { }
+}
+export class LoadColorsSuccess implements Action {
+  readonly type = COLORS_SUCCESS;
+  constructor(public payload: any) { }
+}
+export class LoadColorsFail implements Action {
+  readonly type = COLORS_FAIL;
+  constructor(public payload: any) { }
+}
+
+export const STAINS_LOAD = '[API] Load Stains main';
+export const STAINS_SUCCESS = '[API] Loaded Stains main Success';
+export const STAINS_FAIL = '[API] Load Stains main Fail';
+
+export class LoadStains implements Action {
+  readonly type = STAINS_LOAD;
+  constructor(public payload: any) { }
+}
+export class LoadStainsSuccess implements Action {
+  readonly type = STAINS_SUCCESS;
+  constructor(public payload: any) { }
+}
+export class LoadStainsFail implements Action {
+  readonly type = STAINS_FAIL;
+  constructor(public payload: any) { }
+}
+
 export type ActionsApi = LoadMat
   | LoadMatSuccess
   | LoadMatSuccess
@@ -59,4 +93,10 @@ export type ActionsApi = LoadMat
   | LoadDSFail
   | LoadDoors
   | LoadDoorsSuccess
-  | LoadDoorsFail;
+  | LoadDoorsFail
+  | LoadColors
+  | LoadColorsSuccess
+  | LoadColorsFail
+  | LoadStains
+  | LoadStainsSuccess
+  | LoadStainsFail;
