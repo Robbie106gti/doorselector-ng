@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import * as fromStore from '../../store';
 
 @Component({
   selector: 'nc-color',
@@ -6,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./color.component.scss']
 })
 export class ColorComponent implements OnInit {
+  cards$: Observable<any[]>;
 
-  constructor() { }
+  constructor(private store: Store<fromStore.State>) { }
 
   ngOnInit() {
+    this.cards$ = this.store.select(fromStore.itemsColors);
   }
 
 }
