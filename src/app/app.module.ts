@@ -22,6 +22,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { ColorsComponent } from './pages/colors/colors.component';
 import { StainsComponent } from './pages/stains/stains.component';
 import { ColorComponent } from './components/cards/color/color.component';
+import { SdoorComponent } from './components/selected/sdoor/sdoor.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ColorComponent } from './components/cards/color/color.component';
     DoorComponent,
     ColorsComponent,
     ColorComponent,
-    StainsComponent
+    StainsComponent,
+    SdoorComponent
   ],
   imports: [
     BrowserModule,

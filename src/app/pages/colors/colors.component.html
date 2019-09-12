@@ -1,5 +1,6 @@
-<div class="mat-grid">
-        <p class="hint">Select a type color/species</p>
+<div class="dcs-grid">
+        <p class="hint">Select a color/species</p>
+        <nc-sdoor class="door" [card]="(door$ | async)"></nc-sdoor>
         <div class="cards">
           <nc-color
             class="card"

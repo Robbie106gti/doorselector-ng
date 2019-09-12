@@ -27,6 +27,7 @@ html {
   min-height: 85vh;
   padding-bottom: 15vh;
   .sidebar {
+    position: relative;
     left: 5vw;
     width: 93vw;
   }
@@ -53,7 +54,7 @@ html {
   a:visited {
     color: rgb(210, 253, 255);
   }
-  .card {
+  .card, .door {
     background-color: #ebebeb;
     color: #1a1818;
     a {
@@ -85,7 +86,7 @@ html {
   a:visited {
     color: rgb(48, 84, 87);
   }
-  .card {
+  .card, .door {
     background-color: #ffffff;
     color: #1a1818;
     a {
@@ -133,9 +134,40 @@ html {
     'cards';
 }
 
+.dcs-grid {
+  top: 10vh;
+  position: relative;
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-areas:
+    'hint hint hint'
+    'door cards cards'
+    'door cards cards';
+}
+
 .hint {
   grid-area: hint;
   justify-self: center;
+}
+
+.door {
+  grid-area: door;
+  overflow: hidden;
+  border-radius: 0.3rem;
+  .card-image {
+    width: 100%;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .card-content {
+    font-size: larger;
+    .title {
+      display: grid;
+      justify-items: center;
+    }
+  }
 }
 .cards {
   grid-area: cards;

@@ -68,6 +68,22 @@ export const itemsDoors = createSelector(
   }
 );
 
+export const getDoor = createSelector(
+  stateDoors,
+  fromFeature.getRouterFeature,
+  (doors: { load: Load, doors: any[] }, router: any) => {
+    let doors_array = doors.load.loaded ? doors.doors : [];
+    const params = router.state.params;
+    // console.log(params);
+    doors_array = doors_array.filter((door: Door) => {
+      if (door.alt_menu === params.door) { return true; }
+      return false;
+    });
+    // console.log(doors_array)
+    return doors_array[0];
+  }
+);
+
 export const stateColors = createSelector(
   getApiState,
   (apiState: ApiState) => apiState.colors
@@ -84,7 +100,6 @@ export const itemsColors = createSelector(
   (colors: { load: Load, colors: [Colors] }, router: any) => {
     let colors_array = colors.load.loaded ? colors.colors : [];
     const params = router.state.params;
-    console.log(params);
     colors_array = colors_array.filter((color: Colors) => {
       if (color[params.door] !== '1') {
         return false;
