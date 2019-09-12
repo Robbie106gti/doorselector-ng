@@ -1,11 +1,11 @@
 <div class="mat-grid">
         <p class="hint">Select a type color/species</p>
         <div class="cards">
-          <nc-mat
+          <nc-color
             class="card"
             *ngFor="let card of cards$ | async"
             [card]="card"
-          ></nc-mat>
+          ></nc-color>
         </div>
       </div>
       

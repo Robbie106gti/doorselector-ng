@@ -5,7 +5,8 @@ import * as fromGuards from './guards';
 import { DoorstyleComponent } from './pages/doorstyle/doorstyle.component';
 import { DoorsComponent } from './pages/doors/doors.component';
 import { MaterialComponent } from './pages/material/material.component';
-import { ColorComponent } from './pages/color/color.component';
+import { ColorsComponent } from './pages/colors/colors.component';
+import { StainsComponent } from './pages/stains/stains.component';
 
 export const routes: Routes = [
   {
@@ -20,8 +21,13 @@ export const routes: Routes = [
   },
   {
     path: ':mat/:doorstyle/:door',
-    component: ColorComponent,
-    canActivate: [fromGuards.MatGuard, fromGuards.DoorstyleGuard, fromGuards.DoorsGuard]
+    component: ColorsComponent,
+    canActivate: [fromGuards.MatGuard, fromGuards.DoorstyleGuard, fromGuards.DoorsGuard, fromGuards.ColorsGuard, fromGuards.StainsGuard]
+  },
+  {
+    path: ':mat/:doorstyle/:door/:specie',
+    component: StainsComponent,
+    canActivate: [fromGuards.MatGuard, fromGuards.DoorstyleGuard, fromGuards.DoorsGuard, fromGuards.ColorsGuard, fromGuards.StainsGuard]
   },
   {
     path: '',

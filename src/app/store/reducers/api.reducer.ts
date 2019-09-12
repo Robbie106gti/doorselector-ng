@@ -1,6 +1,7 @@
 import * as fromApi from '../actions/api.actions';
 import { Load, Mat } from '../../models/api';
 import { Door } from 'src/app/models/doors';
+import { Colors } from 'src/app/models/colors';
 
 export interface ApiState {
   matNfin: {
@@ -157,7 +158,12 @@ export function reducer(
     }
 
     case fromApi.COLORS_SUCCESS: {
-      const payload = action.payload;
+      const payload = action.payload.filter((color: Colors) => {
+        if (!color.url_image) {
+          return false;
+        }
+        return true;
+      });
       const load = {
         loaded: true,
         loading: false

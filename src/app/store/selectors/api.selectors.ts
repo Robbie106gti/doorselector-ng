@@ -4,6 +4,8 @@ import * as fromFeature from '../reducers';
 import { ApiState } from '../reducers/api.reducer';
 import { Load, Mat } from 'src/app/models/api';
 import { Door } from 'src/app/models/doors';
+import { Router } from 'src/app/models/router';
+import { Colors } from 'src/app/models/colors';
 
 export const getApiState = createSelector(
   fromFeature.getApiFeature,
@@ -78,7 +80,19 @@ export const loadColors = createSelector(
 
 export const itemsColors = createSelector(
   stateColors,
-  (colors: { load: Load, colors: any[] }) => colors.load.loaded ? colors.colors : []
+  fromFeature.getRouterFeature,
+  (colors: { load: Load, colors: [Colors] }, router: any) => {
+    let colors_array = colors.load.loaded ? colors.colors : [];
+    const params = router.state.params;
+    console.log(params);
+    colors_array = colors_array.filter((color: Colors) => {
+      if (color[params.door] !== '1') {
+        return false;
+      }
+      return true;
+    });
+    return colors_array;
+  }
 );
 
 export const stateStains = createSelector(
