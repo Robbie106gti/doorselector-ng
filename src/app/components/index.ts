@@ -7,6 +7,7 @@ import { SdoorComponent } from './selected/sdoor/sdoor.component';
 import { ShareButtonComponent } from './buttons/share-button/share-button.component';
 import { SaveButtonComponent } from './buttons/save-button/save-button.component';
 import { AlsoKnownComponent } from './cards/also-known/also-known.component';
+import { ResetButtonComponent } from './buttons/reset-button/reset-button.component';
 
 export const components: any[] = [
   ColorComponent,
@@ -17,7 +18,8 @@ export const components: any[] = [
   SdoorComponent,
   ShareButtonComponent,
   SaveButtonComponent,
-  AlsoKnownComponent
+  AlsoKnownComponent,
+  ResetButtonComponent
 ];
 
 export * from './selected/scolor/scolor.component';
@@ -29,3 +31,4 @@ export * from './selected/sdoor/sdoor.component';
 export * from './buttons/share-button/share-button.component';
 export * from './buttons/save-button/save-button.component';
 export * from './cards/also-known/also-known.component';
+export * from './buttons/reset-button/reset-button.component';

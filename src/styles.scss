@@ -165,12 +165,20 @@ html {
 
 .share {
   grid-area: share;
+  display: grid;
+  grid-template-columns: 65% 35%;
   .card-content {
     padding: 0 0.5rem;
     font-size: larger;
     .title {
       display: grid;
       justify-items: left;
+    }
+  }
+  .card-action {
+    justify-self: end;
+    svg {
+      fill: #1a1818;
     }
   }
 }

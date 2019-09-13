@@ -3,14 +3,15 @@
   <p>{{ door.item_name }}, {{ door.doorstyle_menu | plurals }}</p>
   <h3 class="title">Selected Material & Finish:</h3>
   <p>
-    {{ color.Material | titlecase }}, {{ color.item_name }} -
+    {{ color.Material | titlecase }}, {{ color.item_name }}
     <span *ngIf="stain">
-      {{ stain.item_name }}
+      {{ ' - ' + stain.item_name }}
     </span>
   </p>
 </div>
 <div class="card-action">
-  <nc-also-known></nc-also-known>
+  <nc-also-known [door]="door"></nc-also-known>
   <nc-share-button></nc-share-button>
   <nc-save-button></nc-save-button>
+  <nc-reset-button></nc-reset-button>
 </div>
