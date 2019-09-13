@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Door } from 'src/app/models/door';
 import { Store } from '@ngrx/store';
@@ -8,6 +8,7 @@ import { Stain } from 'src/app/models/stain';
 
 @Component({
   selector: 'nc-share',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './share.component.html'
 })
 export class ShareComponent implements OnInit {

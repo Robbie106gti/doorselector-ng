@@ -1,8 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Color } from 'src/app/models/color';
 
 @Component({
   selector: 'nc-color',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './color.component.html',
   styleUrls: ['./color.component.scss']
 })

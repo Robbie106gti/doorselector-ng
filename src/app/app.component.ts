@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Store } from '@ngrx/store';
 import * as fromStore from './store';
@@ -6,6 +6,7 @@ import { UiState } from './store/reducers/ui.reducer';
 
 @Component({
   selector: 'app-root',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `<nc-home [uiState]="(uiState$ | async)"></nc-home>`
 })
 export class AppComponent implements OnInit {
