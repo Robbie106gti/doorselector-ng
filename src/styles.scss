@@ -54,9 +54,10 @@ html {
   a:visited {
     color: rgb(210, 253, 255);
   }
-  .card, .door {
+  .card, .door, .share {
     background-color: #ebebeb;
     color: #1a1818;
+    border-radius: 0.3rem;
     a {
       color: #1a1818;
       text-decoration: none;
@@ -86,9 +87,10 @@ html {
   a:visited {
     color: rgb(48, 84, 87);
   }
-  .card, .door {
+  .card, .door, .share {
     background-color: #ffffff;
     color: #1a1818;
+    border-radius: 0.3rem;
     a {
       color: #1a1818;
       text-decoration: none;
@@ -145,7 +147,7 @@ html {
     'door cards cards';
 }
 
-.dcs-grid {
+.share-grid {
   top: 10vh;
   position: relative;
   display: grid;
@@ -163,12 +165,19 @@ html {
 
 .share {
   grid-area: share;
+  .card-content {
+    padding: 0 0.5rem;
+    font-size: larger;
+    .title {
+      display: grid;
+      justify-items: left;
+    }
+  }
 }
 
 .door {
   grid-area: door;
   overflow: hidden;
-  border-radius: 0.3rem;
   .card-image {
     width: 100%;
     img {
@@ -192,7 +201,6 @@ html {
   grid-gap: 0.5rem;
   .card {
     overflow: hidden;
-    border-radius: 0.3rem;
     width: 100%;
     .card-image {
       width: 100%;

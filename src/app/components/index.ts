@@ -4,6 +4,9 @@ import { DoorComponent } from './cards/door/door.component';
 import { MatComponent } from './cards/mat/mat.component';
 import { ShareCardComponent } from './cards/share-card/share-card.component';
 import { SdoorComponent } from './selected/sdoor/sdoor.component';
+import { ShareButtonComponent } from './buttons/share-button/share-button.component';
+import { SaveButtonComponent } from './buttons/save-button/save-button.component';
+import { AlsoKnownComponent } from './cards/also-known/also-known.component';
 
 export const components: any[] = [
   ColorComponent,
@@ -11,7 +14,10 @@ export const components: any[] = [
   MatComponent,
   ShareCardComponent,
   ScolorComponent,
-  SdoorComponent
+  SdoorComponent,
+  ShareButtonComponent,
+  SaveButtonComponent,
+  AlsoKnownComponent
 ];
 
 export * from './selected/scolor/scolor.component';
@@ -20,3 +26,6 @@ export * from './cards/door/door.component';
 export * from './cards/mat/mat.component';
 export * from './cards/share-card/share-card.component';
 export * from './selected/sdoor/sdoor.component';
+export * from './buttons/share-button/share-button.component';
+export * from './buttons/save-button/save-button.component';
+export * from './cards/also-known/also-known.component';

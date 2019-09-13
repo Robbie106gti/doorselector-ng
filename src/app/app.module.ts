@@ -16,6 +16,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { components } from './components';
 import { pages } from './pages';
+import { pipes } from './pipes';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { pages } from './pages';
     FooterComponent,
     HeaderComponent,
     ...components,
-    ...pages
+    ...pages,
+    ...pipes
   ],
   imports: [
     BrowserModule,

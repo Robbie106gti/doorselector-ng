@@ -1,3 +1,16 @@
 <div class="card-content">
-<p class="title">Share/save card</p>
+  <h3 class="title">Selected door:</h3>
+  <p>{{ door.item_name }}, {{ door.doorstyle_menu | plurals }}</p>
+  <h3 class="title">Selected Material & Finish:</h3>
+  <p>
+    {{ color.Material | titlecase }}, {{ color.item_name }} -
+    <span *ngIf="stain">
+      {{ stain.item_name }}
+    </span>
+  </p>
+</div>
+<div class="card-action">
+  <nc-also-known></nc-also-known>
+  <nc-share-button></nc-share-button>
+  <nc-save-button></nc-save-button>
 </div>
