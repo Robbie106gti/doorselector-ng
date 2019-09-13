@@ -1,7 +1,8 @@
 import * as fromApi from '../actions/api.actions';
 import { Load, Mat } from '../../models/api';
-import { Door } from 'src/app/models/doors';
-import { Colors } from 'src/app/models/colors';
+import { Door } from 'src/app/models/door';
+import { Color } from 'src/app/models/color';
+import { Stain } from 'src/app/models/stain';
 
 export interface ApiState {
   matNfin: {
@@ -14,15 +15,15 @@ export interface ApiState {
   };
   doors: {
     load: Load;
-    doors?: any[];
+    doors?: [Door];
   };
   colors: {
     load: Load;
-    colors?: any[];
+    colors?: [Color];
   };
   stains: {
     load: Load;
-    stains?: any[];
+    stains?: [Stain];
   };
 }
 
@@ -158,7 +159,7 @@ export function reducer(
     }
 
     case fromApi.COLORS_SUCCESS: {
-      const payload = action.payload.filter((color: Colors) => {
+      const payload = action.payload.filter((color: Color) => {
         if (!color.url_image) {
           return false;
         }

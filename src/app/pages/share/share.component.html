@@ -3,6 +3,7 @@
     </p>
     <nc-sdoor class="door" [card]="(door$ | async)"></nc-sdoor>
     <div class="cards">
-
+        <nc-scolor *ngIf="(color$ | async) as color" class="card" [card]="color"></nc-scolor>
+        <nc-scolor *ngIf="(stain$ | async) as stain" class="card" [card]="stain"></nc-scolor>
     </div>
 </div>

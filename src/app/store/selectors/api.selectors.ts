@@ -55,7 +55,7 @@ export const loadDoors = createSelector(
 export const itemsDoors = createSelector(
   stateDoors,
   fromFeature.getRouterFeature,
-  (doors: { load: Load, doors: any[] }, router: any) => {
+  (doors: { load: Load, doors: [Door] }, router: any) => {
     let doors_array = doors.load.loaded ? doors.doors : [];
     const params = router.state.params;
     // console.log(params);
@@ -71,7 +71,7 @@ export const itemsDoors = createSelector(
 export const getDoor = createSelector(
   stateDoors,
   fromFeature.getRouterFeature,
-  (doors: { load: Load, doors: any[] }, router: any) => {
+  (doors: { load: Load, doors: [Door] }, router: any) => {
     let doors_array = doors.load.loaded ? doors.doors : [];
     const params = router.state.params;
     // console.log(params);
@@ -113,7 +113,7 @@ export const itemsColors = createSelector(
 export const getColor = createSelector(
   stateColors,
   fromFeature.getRouterFeature,
-  (colors: { load: Load, colors: any[] }, router: any) => {
+  (colors: { load: Load, colors: [Color] }, router: any) => {
     let colors_array = colors.load.loaded ? colors.colors : [];
     const params = router.state.params;
     // console.log(params);
@@ -138,13 +138,13 @@ export const loadStains = createSelector(
 
 export const itemsStains = createSelector(
   stateStains,
-  (stains: { load: Load, stains: any[] }) => stains.load.loaded ? stains.stains : []
+  (stains: { load: Load, stains: [Stain] }) => stains.load.loaded ? stains.stains : []
 );
 
 export const getStain = createSelector(
   stateStains,
   fromFeature.getRouterFeature,
-  (stains: { load: Load, stains: any[] }, router: any) => {
+  (stains: { load: Load, stains: [Stain] }, router: any) => {
     let stains_array = stains.load.loaded ? stains.stains : [];
     const params = router.state.params;
     // console.log(params);
