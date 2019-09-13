@@ -37,6 +37,9 @@ export function reducer(
     case fromUi.DARK_LIGHT: {
       const payload = action.payload;
       const themeColor = payload ? dark : light;
+      const remove = payload ? light.darkORlight : dark.darkORlight;
+      document.body.classList.remove(remove + 'bg');
+      document.body.classList.add(themeColor.darkORlight + 'bg');
       return { ...state, themeColor };
     }
     case fromUi.MENU: {

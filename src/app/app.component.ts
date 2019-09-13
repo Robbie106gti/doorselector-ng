@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   uiState$: Observable<UiState>;
 
   constructor(private store: Store<fromStore.State>) {}
-
+ 
   @HostListener('window:resize', ['$event']) onResize() {
     this.innerWidth = window.innerWidth;
     const mobile = this.innerWidth < 765 ? true : false;

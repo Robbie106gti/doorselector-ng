@@ -2,7 +2,7 @@
     <p class="hint">Share or save your pick
     </p>
     <nc-sdoor class="door" [card]="(door$ | async)"></nc-sdoor>
-    <div class="cards">
+    <div class="items">
         <nc-scolor *ngIf="(color$ | async) as color" class="card" [card]="color"></nc-scolor>
         <nc-scolor *ngIf="(stain$ | async) as stain" class="card" [card]="stain"></nc-scolor>
     </div>

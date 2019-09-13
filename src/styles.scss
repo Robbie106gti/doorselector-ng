@@ -5,11 +5,18 @@ html {
   font-family: 'Quicksand', sans-serif;
   margin: 0;
   padding: 0;
+  .lightbg {
+    background-color: #eeeeee;
+  }
+  .darkbg {
+    background-color: #333333;
+  }
 }
 .app-body > .mobile {
   position: absolute;
   top: 4vh;
-  min-height: 96vh;
+  min-height: 90vh;
+  padding-bottom: 6vh;
   background-color: inherit;
   .sidebar {
     position: relative;
@@ -24,8 +31,8 @@ html {
 }
 .app-body > .notmobile {
   top: 0vh;
-  min-height: 85vh;
-  padding-bottom: 15vh;
+  min-height: 92vh;
+  padding-bottom: 8vh;
   .sidebar {
     position: relative;
     left: 5vw;
@@ -47,12 +54,29 @@ html {
     svg {
       fill: white;
     }
+    
   }
   a:hover {
     color: rgb(248, 200, 137);
   }
   a:visited {
     color: rgb(210, 253, 255);
+  }
+  .btn {
+    padding: 0.4rem 1rem;
+    margin-top: 0.4rem;
+    border-radius: 1rem;
+    background-color:#333333;
+    text-transform: capitalize;
+    color: #ffffff !important;
+    svg {
+      position: relative;
+      top:0.4rem;
+      fill: white;
+    }
+  }
+  .btn:hover {
+    background-color: #1a1818;
   }
   .card, .door, .share {
     background-color: #ebebeb;
@@ -86,6 +110,22 @@ html {
   }
   a:visited {
     color: rgb(48, 84, 87);
+  }
+  .btn {
+    padding: 0.4rem 1rem;
+    margin-top: 0.4rem;
+    border-radius: 1rem;
+    background-color:#333333;
+    text-transform: capitalize;
+    color: #ffffff !important;
+    svg {
+      position: relative;
+      top:0.4rem;
+      fill: white;
+    }
+  }
+  .btn:hover {
+    background-color: #1a1818;
   }
   .card, .door, .share {
     background-color: #ffffff;
@@ -137,10 +177,11 @@ html {
 }
 
 .dcs-grid {
-  top: 10vh;
+  top: 7vh;
   position: relative;
   display: grid;
   grid-gap: 0.5rem;
+  margin-bottom: 5vh;
   grid-template-areas:
     'hint hint hint'
     'door cards cards'
@@ -148,14 +189,15 @@ html {
 }
 
 .share-grid {
-  top: 10vh;
+  top: 3vh;
   position: relative;
   display: grid;
   grid-gap: 0.5rem;
+  justify-self: center;
   grid-template-areas:
-    'hint hint hint'
-    'door cards cards'
-    'door share share';
+    'hint hint'
+    'door cards'
+    'door share';
 }
 
 .hint {
@@ -167,6 +209,8 @@ html {
   grid-area: share;
   display: grid;
   grid-template-columns: 65% 35%;
+  max-width: 50vw;
+  min-height: 35vh;
   .card-content {
     padding: 0 0.5rem;
     font-size: larger;
@@ -176,21 +220,20 @@ html {
     }
   }
   .card-action {
+    align-self: end;
     justify-self: end;
-    svg {
-      fill: #1a1818;
-    }
+    padding: 0 1rem 1rem 0;
   }
 }
 
 .door {
   grid-area: door;
-  overflow: hidden;
   .card-image {
     width: 100%;
+    text-align: center;
     img {
-      width: 100%;
-      height: auto;
+      max-width: 100%;
+      max-height: 75vh;
     }
   }
   .card-content {
@@ -224,5 +267,47 @@ html {
         justify-items: center;
       }
     }
+  }
+}
+.items {
+  grid-area: cards;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5rem;
+  max-width: 50vw;
+  max-height: 50vh;
+  .card {
+    overflow: hidden;
+    width: 100%;
+    .card-image {
+      width: 100%;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .card-content {
+      font-size: larger;
+      .title {
+        display: grid;
+        justify-items: center;
+      }
+    }
+  }
+}
+
+.cornerstone {
+  color: #4d4d4d;
+  font-style: italic;
+  padding-bottom: 1rem;
+  display: block;
+  h4 {
+    padding: 0;
+    margin: 0;
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
   }
 }
