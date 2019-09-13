@@ -1,4 +1,4 @@
-export interface Stains {
+export interface Stain {
     id: string;
     sup_name: string;
     by_who: string;

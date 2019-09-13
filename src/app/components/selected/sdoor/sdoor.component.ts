@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Door } from 'src/app/models/doors';
+import { Door } from 'src/app/models/door';
 
 @Component({
   selector: 'nc-sdoor',

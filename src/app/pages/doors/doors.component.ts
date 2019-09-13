@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import * as fromStore from '../../store';
-import { Door } from 'src/app/models/doors';
+import { Door } from 'src/app/models/door';
 
 @Component({
   selector: 'nc-doors',

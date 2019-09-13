@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import * as fromStore from '../../store';
-import { MatCard } from 'src/app/models/cards';
+import { MatCard } from 'src/app/models/card';
 
 @Component({
   selector: 'nc-doorstyle',

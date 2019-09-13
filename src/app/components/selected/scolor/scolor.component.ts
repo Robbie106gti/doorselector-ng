@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Colors } from 'src/app/models/colors';
+import { Color } from 'src/app/models/color';
 
 @Component({
   selector: 'nc-scolor',
@@ -7,7 +7,7 @@ import { Colors } from 'src/app/models/colors';
   styleUrls: ['./scolor.component.scss']
 })
 export class ScolorComponent {
-  @Input() card: Colors;
+  @Input() card: Color;
     constructor() { }
 
 }

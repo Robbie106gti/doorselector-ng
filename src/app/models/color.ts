@@ -1,4 +1,4 @@
-export interface Colors {
+export interface Color {
   id: string;
   parent_id: string;
   visible: string;

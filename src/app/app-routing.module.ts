@@ -26,17 +26,17 @@ export const routes: Routes = [
     canActivate: [fromGuards.MatGuard, fromGuards.DoorstyleGuard, fromGuards.DoorsGuard, fromGuards.ColorsGuard, fromGuards.StainsGuard]
   },
   {
-    path: ':mat/:doorstyle/:door/:specie',
+    path: ':mat/:doorstyle/:door/:color',
     component: StainsComponent,
     canActivate: [fromGuards.MatGuard, fromGuards.DoorstyleGuard, fromGuards.DoorsGuard, fromGuards.ColorsGuard, fromGuards.StainsGuard]
   },
   {
-    path: ':mat/:doorstyle/:door/:specie/share',
+    path: ':mat/:doorstyle/:door/:color/share',
     component: ShareComponent,
     canActivate: [fromGuards.MatGuard, fromGuards.DoorstyleGuard, fromGuards.DoorsGuard, fromGuards.ColorsGuard, fromGuards.StainsGuard]
   },
   {
-    path: ':mat/:doorstyle/:door/:specie/:stain/share',
+    path: ':mat/:doorstyle/:door/:color/:stain/share',
     component: ShareComponent,
     canActivate: [fromGuards.MatGuard, fromGuards.DoorstyleGuard, fromGuards.DoorsGuard, fromGuards.ColorsGuard, fromGuards.StainsGuard]
   },

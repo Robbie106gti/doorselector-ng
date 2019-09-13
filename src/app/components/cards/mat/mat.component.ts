@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { MatCard } from 'src/app/models/cards';
+import { MatCard } from 'src/app/models/card';
 
 @Component({
   selector: 'nc-mat',

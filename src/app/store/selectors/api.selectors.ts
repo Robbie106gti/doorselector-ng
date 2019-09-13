@@ -1,11 +1,11 @@
-import { createSelector, createFeatureSelector } from '@ngrx/store';
+import { createSelector } from '@ngrx/store';
 
 import * as fromFeature from '../reducers';
 import { ApiState } from '../reducers/api.reducer';
 import { Load, Mat } from 'src/app/models/api';
-import { Door } from 'src/app/models/doors';
-import { Router } from 'src/app/models/router';
-import { Colors } from 'src/app/models/colors';
+import { Door } from 'src/app/models/door';
+import { Color } from 'src/app/models/color';
+import { Stain } from 'src/app/models/stain';
 
 export const getApiState = createSelector(
   fromFeature.getApiFeature,
@@ -97,16 +97,32 @@ export const loadColors = createSelector(
 export const itemsColors = createSelector(
   stateColors,
   fromFeature.getRouterFeature,
-  (colors: { load: Load, colors: [Colors] }, router: any) => {
+  (colors: { load: Load, colors: [Color] }, router: any) => {
     let colors_array = colors.load.loaded ? colors.colors : [];
     const params = router.state.params;
-    colors_array = colors_array.filter((color: Colors) => {
+    colors_array = colors_array.filter((color: Color) => {
       if (color[params.door] !== '1') {
         return false;
       }
       return true;
     });
     return colors_array;
+  }
+);
+
+export const getColor = createSelector(
+  stateColors,
+  fromFeature.getRouterFeature,
+  (colors: { load: Load, colors: any[] }, router: any) => {
+    let colors_array = colors.load.loaded ? colors.colors : [];
+    const params = router.state.params;
+    // console.log(params);
+    colors_array = colors_array.filter((color: Color) => {
+      if (color.item_name.toLocaleLowerCase() === params.color) { return true; }
+      return false;
+    });
+    // console.log(colors_array)
+    return colors_array[0];
   }
 );
 
@@ -123,6 +139,22 @@ export const loadStains = createSelector(
 export const itemsStains = createSelector(
   stateStains,
   (stains: { load: Load, stains: any[] }) => stains.load.loaded ? stains.stains : []
+);
+
+export const getStain = createSelector(
+  stateStains,
+  fromFeature.getRouterFeature,
+  (stains: { load: Load, stains: any[] }, router: any) => {
+    let stains_array = stains.load.loaded ? stains.stains : [];
+    const params = router.state.params;
+    // console.log(params);
+    stains_array = stains_array.filter((stain: Stain) => {
+      if (stain.item_name.toLocaleLowerCase() === params.stain) { return true; }
+      return false;
+    });
+    // console.log(stains_array)
+    return stains_array[0];
+  }
 );
 
 function materials(mat, door) {

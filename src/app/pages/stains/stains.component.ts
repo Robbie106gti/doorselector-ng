@@ -2,15 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import * as fromStore from '../../store';
-import { Stains } from 'src/app/models/stains';
-import { Door } from 'src/app/models/doors';
+import { Stain } from 'src/app/models/stain';
+import { Door } from 'src/app/models/door';
 
 @Component({
   selector: 'nc-stains',
   templateUrl: './stains.component.html'
 })
 export class StainsComponent implements OnInit {
-  cards$: Observable<any[] | [Stains]>;
+  cards$: Observable<any[] | [Stain]>;
   door$: Observable<any | Door>;
 
   constructor(private store: Store<fromStore.State>) { }

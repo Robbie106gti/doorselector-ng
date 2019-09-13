@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Colors } from 'src/app/models/colors';
+import { Color } from 'src/app/models/color';
 
 @Component({
   selector: 'nc-color',
@@ -7,7 +7,7 @@ import { Colors } from 'src/app/models/colors';
   styleUrls: ['./color.component.scss']
 })
 export class ColorComponent implements OnInit {
-  @Input() card: Colors;
+  @Input() card: Color;
   link: string;
     constructor() { }
 
