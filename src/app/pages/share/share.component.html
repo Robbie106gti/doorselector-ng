@@ -6,5 +6,5 @@
         <nc-scolor *ngIf="(color$ | async) as color" class="card" [card]="color"></nc-scolor>
         <nc-scolor *ngIf="(stain$ | async) as stain" class="card" [card]="stain"></nc-scolor>
     </div>
-    <nc-share-card [door]="(door$ | async)" [color]="(color$ | async)" [stain]="(stain$ | async)" class="share"></nc-share-card>
+    <nc-share-card [door]="(door$ | async)" [color]="(color$ | async)" [stain]="(stain$ | async)" (saveDoor)="SaveDoor($event)" class="share"></nc-share-card>
 </div>

@@ -12,6 +12,6 @@
 <div class="card-action">
   <nc-also-known [door]="door"></nc-also-known>
   <nc-share-button></nc-share-button>
-  <nc-save-button></nc-save-button>
+  <nc-save-button (add)="SaveDoor($event)"></nc-save-button>
   <nc-reset-button></nc-reset-button>
 </div>

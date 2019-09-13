@@ -12,7 +12,7 @@ export class AlsoKnownComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.door);
+    // console.log(this.door);
   }
 
 }
