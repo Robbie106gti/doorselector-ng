@@ -145,9 +145,24 @@ html {
     'door cards cards';
 }
 
+.dcs-grid {
+  top: 10vh;
+  position: relative;
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-areas:
+    'hint hint hint'
+    'door cards cards'
+    'door share share';
+}
+
 .hint {
   grid-area: hint;
   justify-self: center;
+}
+
+.share {
+  grid-area: share;
 }
 
 .door {

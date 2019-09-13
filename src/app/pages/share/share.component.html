@@ -1,4 +1,4 @@
-<div class="dcs-grid">
+<div class="share-grid">
     <p class="hint">Share or save your pick
     </p>
     <nc-sdoor class="door" [card]="(door$ | async)"></nc-sdoor>
@@ -6,4 +6,5 @@
         <nc-scolor *ngIf="(color$ | async) as color" class="card" [card]="color"></nc-scolor>
         <nc-scolor *ngIf="(stain$ | async) as stain" class="card" [card]="stain"></nc-scolor>
     </div>
+    <nc-share-card class="share"></nc-share-card>
 </div>
