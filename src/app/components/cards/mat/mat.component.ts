@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatCard } from 'src/app/models/cards';
 
 @Component({
@@ -6,11 +6,7 @@ import { MatCard } from 'src/app/models/cards';
   templateUrl: './mat.component.html',
   styleUrls: ['./mat.component.scss']
 })
-export class MatComponent implements OnInit {
+export class MatComponent {
 @Input() card: MatCard;
   constructor() { }
-
-  ngOnInit() {
-  }
-
 }

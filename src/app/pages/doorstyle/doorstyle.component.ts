@@ -6,8 +6,7 @@ import { MatCard } from 'src/app/models/cards';
 
 @Component({
   selector: 'nc-doorstyle',
-  templateUrl: './doorstyle.component.html',
-  styleUrls: ['./doorstyle.component.scss']
+  templateUrl: './doorstyle.component.html'
 })
 export class DoorstyleComponent implements OnInit {
   cards$: Observable<any[] | [MatCard]>;

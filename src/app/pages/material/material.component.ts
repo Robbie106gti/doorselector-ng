@@ -6,8 +6,7 @@ import { MatCard } from 'src/app/models/cards';
 
 @Component({
   selector: 'nc-material',
-  templateUrl: './material.component.html',
-  styleUrls: ['./material.component.scss']
+  templateUrl: './material.component.html'
 })
 export class MaterialComponent implements OnInit {
   cards$: Observable<any[] | [MatCard]>;

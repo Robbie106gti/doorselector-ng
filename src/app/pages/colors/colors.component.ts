@@ -7,8 +7,7 @@ import { Door } from 'src/app/models/doors';
 
 @Component({
   selector: 'nc-colors',
-  templateUrl: './colors.component.html',
-  styleUrls: ['./colors.component.scss']
+  templateUrl: './colors.component.html'
 })
 export class ColorsComponent implements OnInit {
   cards$: Observable<any[] | [Colors]>;

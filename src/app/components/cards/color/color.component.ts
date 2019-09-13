@@ -8,9 +8,17 @@ import { Colors } from 'src/app/models/colors';
 })
 export class ColorComponent implements OnInit {
   @Input() card: Colors;
+  link: string;
     constructor() { }
 
     ngOnInit() {
+      this.link = this.makeLink();
+    }
+
+    makeLink() {
+      // tslint:disable-next-line: max-line-length
+      const newlink = this.card.Material === 'WOOD' ? this.card.item_name.toLocaleLowerCase() : this.card.item_name.toLocaleLowerCase() + '/share';
+      return newlink;
     }
 
 }

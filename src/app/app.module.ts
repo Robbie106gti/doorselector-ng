@@ -23,6 +23,8 @@ import { ColorsComponent } from './pages/colors/colors.component';
 import { StainsComponent } from './pages/stains/stains.component';
 import { ColorComponent } from './components/cards/color/color.component';
 import { SdoorComponent } from './components/selected/sdoor/sdoor.component';
+import { ShareComponent } from './pages/share/share.component';
+import { ScolorComponent } from './components/selected/scolor/scolor.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { SdoorComponent } from './components/selected/sdoor/sdoor.component';
     ColorsComponent,
     ColorComponent,
     StainsComponent,
-    SdoorComponent
+    SdoorComponent,
+    ShareComponent,
+    ScolorComponent
   ],
   imports: [
     BrowserModule,

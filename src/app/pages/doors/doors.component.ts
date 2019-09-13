@@ -6,8 +6,7 @@ import { Door } from 'src/app/models/doors';
 
 @Component({
   selector: 'nc-doors',
-  templateUrl: './doors.component.html',
-  styleUrls: ['./doors.component.scss']
+  templateUrl: './doors.component.html'
 })
 export class DoorsComponent implements OnInit {
   cards$: Observable<any[] | [Door]>;

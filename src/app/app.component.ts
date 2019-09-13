@@ -6,8 +6,7 @@ import { UiState } from './store/reducers/ui.reducer';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `<nc-home [uiState]="(uiState$ | async)"></nc-home>`
 })
 export class AppComponent implements OnInit {
   public innerWidth: any;

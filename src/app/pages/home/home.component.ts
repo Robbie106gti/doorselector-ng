@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { UiState } from 'src/app/store/reducers/ui.reducer';
 
 @Component({
@@ -6,12 +6,9 @@ import { UiState } from 'src/app/store/reducers/ui.reducer';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   @Input() uiState: UiState;
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }
