@@ -8,6 +8,8 @@ import { ShareButtonComponent } from './buttons/share-button/share-button.compon
 import { SaveButtonComponent } from './buttons/save-button/save-button.component';
 import { AlsoKnownComponent } from './cards/also-known/also-known.component';
 import { ResetButtonComponent } from './buttons/reset-button/reset-button.component';
+import { RemoveButtonComponent } from './buttons/remove-button/remove-button.component';
+import { SavedDoorComponent } from './cards/saved-door/saved-door.component';
 
 export const components: any[] = [
   ColorComponent,
@@ -19,7 +21,9 @@ export const components: any[] = [
   ShareButtonComponent,
   SaveButtonComponent,
   AlsoKnownComponent,
-  ResetButtonComponent
+  ResetButtonComponent,
+  RemoveButtonComponent,
+  SavedDoorComponent
 ];
 
 export * from './selected/scolor/scolor.component';
@@ -32,3 +36,5 @@ export * from './buttons/share-button/share-button.component';
 export * from './buttons/save-button/save-button.component';
 export * from './cards/also-known/also-known.component';
 export * from './buttons/reset-button/reset-button.component';
+export * from './buttons/remove-button/remove-button.component';
+export * from './cards/saved-door/saved-door.component';

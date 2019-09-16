@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Saved } from 'src/app/models/saved';
 import { Door } from 'src/app/models/door';
 import { Color } from 'src/app/models/color';
 import { Stain } from 'src/app/models/stain';
@@ -20,10 +21,10 @@ export class ShareCardComponent implements OnInit {
   }
 
   SaveDoor() {
-    const save = {
+    const save: Saved = {
       door: this.door,
       color: this.color,
-      stains: this.stain
+      stain: this.stain
     };
     this.saveDoor.emit(save);
   }

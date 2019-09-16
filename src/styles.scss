@@ -54,7 +54,6 @@ html {
     svg {
       fill: white;
     }
-    
   }
   a:hover {
     color: rgb(248, 200, 137);
@@ -66,19 +65,21 @@ html {
     padding: 0.4rem 1rem;
     margin-top: 0.4rem;
     border-radius: 1rem;
-    background-color:#333333;
+    background-color: #333333;
     text-transform: capitalize;
     color: #ffffff !important;
     svg {
       position: relative;
-      top:0.4rem;
+      top: 0.4rem;
       fill: white;
     }
   }
   .btn:hover {
     background-color: #1a1818;
   }
-  .card, .door, .share {
+  .card,
+  .door,
+  .share {
     background-color: #ebebeb;
     color: #1a1818;
     border-radius: 0.3rem;
@@ -115,19 +116,21 @@ html {
     padding: 0.4rem 1rem;
     margin-top: 0.4rem;
     border-radius: 1rem;
-    background-color:#333333;
+    background-color: #333333;
     text-transform: capitalize;
     color: #ffffff !important;
     svg {
       position: relative;
-      top:0.4rem;
+      top: 0.4rem;
       fill: white;
     }
   }
   .btn:hover {
     background-color: #1a1818;
   }
-  .card, .door, .share {
+  .card,
+  .door,
+  .share {
     background-color: #ffffff;
     color: #1a1818;
     border-radius: 0.3rem;
@@ -309,5 +312,94 @@ html {
     padding: 0;
     margin: 0;
     list-style: none;
+  }
+}
+
+.closed {
+  .saveddoors {
+    position: relative;
+    top: 1.5em;
+    padding: 0.2rem;
+    font-size: small;
+    text-align: center;
+    max-width: 100%;
+    overflow: hidden;
+    .saveddoor {
+      .images {
+        display: grid;
+        max-width: 100%;
+        grid-template-areas:
+          'door door'
+          'color stain';
+        grid-gap: 0.5rem;
+        .door {
+          grid-area: door;
+          max-width: 100%;
+        }
+        .color {
+          grid-area: color;
+          max-width: 100%;
+        }
+        .stain {
+          grid-area: stain;
+          max-width: 100%;
+        }
+      }
+      img {
+        max-height: 10vh;
+      }
+      .remove-door {
+        position: relative;
+        top: 2.2vh;
+        opacity: 0;
+      }
+      .remove-door:hover {
+        opacity: 100;
+      }
+    }
+  }
+}
+
+.open {
+  .saveddoors {
+    position: relative;
+    top: 1.5em;
+    font-size: small;
+    text-align: center;
+    max-width: 100%;
+    overflow: hidden;
+    .saveddoor {
+      .images {
+        display: grid;
+        max-width: 100%;
+        grid-template-areas:
+          'door door'
+          'color stain';
+        grid-gap: 0.5rem;
+        .door {
+          grid-area: door;
+          max-width: 100%;
+        }
+        .color {
+          grid-area: color;
+          max-width: 100%;
+        }
+        .stain {
+          grid-area: stain;
+          max-width: 100%;
+        }
+      }
+      img {
+        max-height: 10vh;
+      }
+      .remove-door {
+        position: relative;
+        top: 2.2vh;
+        opacity: 0;
+      }
+      .remove-door:hover {
+        opacity: 100;
+      }
+    }
   }
 }

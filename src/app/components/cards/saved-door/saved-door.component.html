@@ -1,0 +1,26 @@
+<nc-remove-button
+  class="remove-door"
+  (remove)="Remove($event)"
+></nc-remove-button>
+<div class="images">
+  <img
+    class="door"
+    [src]="savedDoor.door.url_image"
+    [alt]="savedDoor.door.item_name"
+    load="lazy"
+  />
+  <img
+    class="color"
+    [src]="savedDoor.color.url_image"
+    [alt]="savedDoor.color.item_name"
+    load="lazy"
+  />
+  <img
+    *ngIf="savedDoor.stain"
+    class="stain"
+    [src]="savedDoor.stain.url_image"
+    [alt]="savedDoor.stain.item_name"
+    load="lazy"
+  />
+</div>
+<p>{{ savedDoor.door.item_name }}</p>

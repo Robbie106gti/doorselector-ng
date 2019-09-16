@@ -24,6 +24,6 @@ export class ShareComponent implements OnInit {
     this.stain$ = this.store.select(fromStore.getStain);
   }
   SaveDoor(e) {
-    this.store.dispatch({ type: fromStore.SAVE_DOOR, payload: e})
+    this.store.dispatch({ type: fromStore.SAVE_DOOR, payload: e });
   }
 }
