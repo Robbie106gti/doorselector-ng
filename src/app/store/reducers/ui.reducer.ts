@@ -1,5 +1,6 @@
 import * as fromUi from '../actions/ui.actions';
 import { ThemeColor } from 'src/app/models/ui';
+import { ProductLines, Line } from 'src/app/models/line';
 
 const dark = {
   darkORlight: 'dark',
@@ -17,16 +18,30 @@ const light = {
   bg: '#EEEEEE'
 };
 
+const cornerstone: Line = {
+  title: 'cornerstone',
+  icon: 'cs',
+  active: false
+};
+
+const custom: Line = {
+  title: 'custom',
+  icon: 'cu',
+  active: false
+};
+
 export interface UiState {
   themeColor: ThemeColor;
   mobile: boolean;
   sidemenu: boolean;
+  lines: ProductLines;
 }
 
 export const initialUiState: UiState = {
   themeColor: (matchMedia('(prefers-color-scheme: dark)').matches ? dark : light),
   mobile: false,
-  sidemenu: false
+  sidemenu: false,
+  lines: { cornerstone, custom }
 };
 
 export function reducer(
@@ -51,6 +66,16 @@ export function reducer(
       const payload = action.payload;
       const mobile = payload;
       return { ...state, mobile };
+    }
+
+    case fromUi.CHANGE_LINES: {
+      const payload = action.payload;
+      const lines = {
+        cornerstone: { ...cornerstone, active: payload === cornerstone.title ? true : false },
+        custom: { ...custom, active: payload === custom.title ? true : false },
+        active: payload
+      };
+      return { ...state, lines };
     }
 
     case fromUi.RESET: {

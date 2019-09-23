@@ -8,8 +8,14 @@ import { MaterialComponent } from './pages/material/material.component';
 import { ColorsComponent } from './pages/colors/colors.component';
 import { StainsComponent } from './pages/stains/stains.component';
 import { ShareComponent } from './pages/share/share.component';
+import { LinesComponent } from './pages/lines/lines.component';
 
 export const routes: Routes = [
+  {
+    path: 'line',
+    component: LinesComponent,
+    canActivate: [fromGuards.LinesGuard]
+  },
   {
     path: ':mat',
     component: DoorstyleComponent,

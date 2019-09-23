@@ -13,3 +13,8 @@ export const getThemeColor = createSelector(
   (state: UiState) => state.themeColor
 );
 
+export const getProductLines = createSelector(
+  fromFeature.getUiFeature,
+  (state: UiState) => state.lines
+);
+

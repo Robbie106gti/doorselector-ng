@@ -1,6 +1,14 @@
-<a [routerLink]="[card.alt_menu]" routerLinkActive="router-link-active">
+<a
+  [routerLink]="[card.alt_menu]"
+  routerLinkActive="router-link-active"
+  queryParamsHandling="merge"
+>
   <div class="card-image">
-    <img [src]="card['ImageURLpreview']" [alt]="card['item_name']" loading="lazy" />
+    <img
+      [src]="card['ImageURLpreview']"
+      [alt]="card['item_name']"
+      loading="lazy"
+    />
   </div>
   <div class="card-content">
     <p class="title">{{ card['item_name'] }}</p>

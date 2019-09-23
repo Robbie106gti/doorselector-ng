@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { MaterialComponent } from './material/material.component';
 import { ShareComponent } from './share/share.component';
 import { StainsComponent } from './stains/stains.component';
+import { LinesComponent } from './lines/lines.component';
 
 export const pages: any[] = [
   ColorsComponent,
@@ -13,13 +14,15 @@ export const pages: any[] = [
   HomeComponent,
   MaterialComponent,
   ShareComponent,
-  StainsComponent
+  StainsComponent,
+  LinesComponent
 ];
 
 export * from './colors/colors.component';
 export * from './doors/doors.component';
 export * from './doorstyle/doorstyle.component';
-export *from './home/home.component';
+export * from './home/home.component';
 export * from './material/material.component';
 export * from './share/share.component';
 export * from './stains/stains.component';
+export * from './lines/lines.component';
