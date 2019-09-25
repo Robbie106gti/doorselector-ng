@@ -14,42 +14,86 @@ export const routes: Routes = [
   {
     path: 'line',
     component: LinesComponent,
-    canActivate: [fromGuards.LinesGuard]
+    canActivate: [
+    ]
   },
   {
     path: ':mat',
     component: DoorstyleComponent,
-    canActivate: [fromGuards.MatGuard, fromGuards.DoorstyleGuard, fromGuards.DoorsGuard]
+    canActivate: [
+      fromGuards.LinesGuard,
+      fromGuards.MatGuard,
+      fromGuards.DoorstyleGuard,
+      fromGuards.DoorsGuard
+    ]
   },
   {
     path: ':mat/:doorstyle',
     component: DoorsComponent,
-    canActivate: [fromGuards.MatGuard, fromGuards.DoorstyleGuard, fromGuards.DoorsGuard]
+    canActivate: [
+      fromGuards.LinesGuard,
+      fromGuards.MatGuard,
+      fromGuards.DoorstyleGuard,
+      fromGuards.DoorsGuard
+    ]
   },
   {
     path: ':mat/:doorstyle/:door',
     component: ColorsComponent,
-    canActivate: [fromGuards.MatGuard, fromGuards.DoorstyleGuard, fromGuards.DoorsGuard, fromGuards.ColorsGuard, fromGuards.StainsGuard]
+    canActivate: [
+      fromGuards.LinesGuard,
+      fromGuards.MatGuard,
+      fromGuards.DoorstyleGuard,
+      fromGuards.DoorsGuard,
+      fromGuards.ColorsGuard,
+      fromGuards.StainsGuard
+    ]
   },
   {
     path: ':mat/:doorstyle/:door/:color',
     component: StainsComponent,
-    canActivate: [fromGuards.MatGuard, fromGuards.DoorstyleGuard, fromGuards.DoorsGuard, fromGuards.ColorsGuard, fromGuards.StainsGuard]
+    canActivate: [
+      fromGuards.LinesGuard,
+      fromGuards.MatGuard,
+      fromGuards.DoorstyleGuard,
+      fromGuards.DoorsGuard,
+      fromGuards.ColorsGuard,
+      fromGuards.StainsGuard
+    ]
   },
   {
     path: ':mat/:doorstyle/:door/:color/share',
     component: ShareComponent,
-    canActivate: [fromGuards.MatGuard, fromGuards.DoorstyleGuard, fromGuards.DoorsGuard, fromGuards.ColorsGuard, fromGuards.StainsGuard]
+    canActivate: [
+      fromGuards.LinesGuard,
+      fromGuards.MatGuard,
+      fromGuards.DoorstyleGuard,
+      fromGuards.DoorsGuard,
+      fromGuards.ColorsGuard,
+      fromGuards.StainsGuard
+    ]
   },
   {
     path: ':mat/:doorstyle/:door/:color/:stain/share',
     component: ShareComponent,
-    canActivate: [fromGuards.MatGuard, fromGuards.DoorstyleGuard, fromGuards.DoorsGuard, fromGuards.ColorsGuard, fromGuards.StainsGuard]
+    canActivate: [
+      fromGuards.LinesGuard,
+      fromGuards.MatGuard,
+      fromGuards.DoorstyleGuard,
+      fromGuards.DoorsGuard,
+      fromGuards.ColorsGuard,
+      fromGuards.StainsGuard
+    ]
   },
   {
     path: '',
     component: MaterialComponent,
-    canActivate: [fromGuards.MatGuard, fromGuards.DoorstyleGuard, fromGuards.DoorsGuard]
+    canActivate: [
+      fromGuards.LinesGuard,
+      fromGuards.MatGuard,
+      fromGuards.DoorstyleGuard,
+      fromGuards.DoorsGuard
+    ]
   }
 ];
 

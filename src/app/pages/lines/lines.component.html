@@ -2,9 +2,16 @@
   <p class="hint">Select one of our product lines</p>
   <div class="cards">
     <a
-      [routerLink]="['/', 'cornerstone']"
+      [routerLink]="['/']"
+      [queryParams]="{ line: 'cornerstone' }"
       routerLinkActive="router-link-active"
-    ></a>
-    <a [routerLink]="['/', 'custom']" routerLinkActive="router-link-active"></a>
+      >Cornerstone</a
+    >
+    <a
+      [routerLink]="['/']"
+      [queryParams]="{ line: 'custom' }"
+      routerLinkActive="router-link-active"
+      >Custom</a
+    >
   </div>
 </div>
